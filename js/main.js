@@ -39,11 +39,13 @@
     burger.addEventListener('click', function(){
       mobileMenu.classList.toggle('open');
       burger.classList.toggle('open');
+      if(nav) nav.classList.toggle('menu-open', mobileMenu.classList.contains('open'));
     });
     mobileMenu.querySelectorAll('a').forEach(function(a){
       a.addEventListener('click', function(){
         mobileMenu.classList.remove('open');
         burger.classList.remove('open');
+        if(nav) nav.classList.remove('menu-open');
       });
     });
   }
