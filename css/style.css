@@ -48,6 +48,7 @@ html[data-sector="resorts"]{
 html{
   scroll-behavior:smooth;
   background:var(--ink);
+  font-size:clamp(16px, 0.39vw + 12px, 20px);
 }
 body{
   background:var(--ink);
@@ -774,6 +775,60 @@ section{
   color:var(--paper);
 }
 .gallery-item.tall{grid-row:span 2;}
+
+/* ---------- gallery picker (gallery.html) ---------- */
+.gallery-pick{all:unset;cursor:pointer;display:flex;flex-direction:column;width:100%;}
+.gallery-pick .count{
+  position:relative;z-index:1;
+  font-size:.78rem;
+  color:var(--paper-faint);
+  margin-top:-.4rem;
+  margin-bottom:1.4rem;
+}
+.gallery-pick.active{border-color:var(--card-accent, var(--accent));}
+.gallery-pick.active .card-photo::after{background:linear-gradient(180deg, rgba(10,9,6,0) 30%, var(--card-accent, var(--accent)) 220%);}
+.gallery-set{display:none;}
+.gallery-set.active{display:grid;}
+.gallery-set .gallery-item{cursor:zoom-in;}
+
+/* ---------- lightbox ---------- */
+.lightbox{
+  position:fixed;inset:0;
+  z-index:9996;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:5vh 5vw;
+  background:rgba(12,11,8,.94);
+}
+.lightbox.open{display:flex;}
+.lightbox img{
+  max-width:100%;max-height:100%;
+  border-radius:14px;
+  object-fit:contain;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.lightbox-close{
+  position:absolute;
+  top:2rem;right:2rem;
+  width:46px;height:46px;
+  border-radius:50%;
+  border:1px solid var(--line-strong);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--paper);
+  transition:border-color .3s, color .3s;
+}
+.lightbox-close:hover{border-color:var(--accent);color:var(--accent);}
+.lightbox-close svg{width:18px;height:18px;}
+.lightbox-cap{
+  position:absolute;
+  bottom:2.2rem;left:0;right:0;
+  text-align:center;
+  color:var(--paper-dim);
+  font-size:.9rem;
+}
 .split-visual .ring{
   position:absolute;
   border:1px solid var(--line-strong);
