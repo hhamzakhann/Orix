@@ -5,9 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root{
-  --ink:#4d4636;
-  --ink-2:#585140;
-  --ink-3:#645c49;
+  --ink:#5a5240;
+  --ink-2:#655d4a;
+  --ink-3:#716855;
   --paper:#f9f6ee;
   --paper-dim:#d3ccb4;
   --paper-faint:#b0a78e;
@@ -194,7 +194,7 @@ h1,h2,h3,h4{
 }
 .nav.scrolled{
   padding:1rem var(--pad);
-  background:rgba(77,70,54,0.86);
+  background:rgba(90,82,64,0.86);
   backdrop-filter:blur(14px) saturate(140%);
   border-bottom:1px solid var(--line);
 }
