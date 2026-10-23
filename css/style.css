@@ -796,6 +796,17 @@ section{
   transition:transform .7s var(--ease);
 }
 .gallery-item:hover img{transform:scale(1.08);}
+.gallery-more{
+  display:flex;
+  justify-content:center;
+  margin-top:2.4rem;
+}
+/* btn-ghost is built for the dark hero; this one sits on the page */
+.gallery-more .btn-ghost{
+  border-color:var(--line-strong);
+  color:var(--paper);
+}
+.gallery-more .btn-ghost:hover{border-color:var(--accent);color:var(--accent-text);}
 .gallery-item .cap{
   position:absolute;
   left:0;right:0;bottom:0;

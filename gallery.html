@@ -64,7 +64,7 @@
           </div>
           <div class="tag">ORIX Energy</div>
           <h3>Sites &amp; Installations</h3>
-          <div class="count">5 photos</div>
+          <div class="count" data-gallery-count="energy"></div>
           <div class="go">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
         </div>
       </button>
@@ -78,7 +78,7 @@
           </div>
           <div class="tag">ORIX Agro</div>
           <h3>Fields &amp; Livestock</h3>
-          <div class="count">6 photos</div>
+          <div class="count" data-gallery-count="agro"></div>
           <div class="go">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
         </div>
       </button>
@@ -92,7 +92,7 @@
           </div>
           <div class="tag">Cedar Lodges &amp; Residences</div>
           <h3>Suites &amp; Lounges</h3>
-          <div class="count">8 photos</div>
+          <div class="count" data-gallery-count="resorts"></div>
           <div class="go">View Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
         </div>
       </button>
@@ -105,90 +105,11 @@
 <section id="gallery-display">
   <div class="container">
 
-    <div class="gallery-grid gallery-set active" data-set="energy">
-      <div class="gallery-item reveal in">
-        <img src="assets/energy/hero-solar.jpg" alt="ORIX Energy technicians installing solar panels">
-        <div class="cap">On-site installation</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/energy/engineer-portrait.jpg" alt="ORIX Energy technician installing a solar panel">
-        <div class="cap">Precision fitting</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/energy/rooftop-panels.jpg" alt="Rooftop solar panel array in sunlight">
-        <div class="cap">Commercial rooftop array</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/energy/inspecting.jpg" alt="ORIX Energy electricians inspecting a solar installation">
-        <div class="cap">Site inspection &amp; commissioning</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/energy/water-pump.jpg" alt="Solar-powered water pumping in an agricultural field">
-        <div class="cap">Solar water pumping in the field</div>
-      </div>
-    </div>
+    <div class="gallery-grid gallery-set active" data-set="energy" data-gallery-set="energy"></div>
 
-    <div class="gallery-grid gallery-set" data-set="agro">
-      <div class="gallery-item reveal in">
-        <img src="assets/agro/green-wheat-field.jpg" alt="A lush green wheat field near Risalpur">
-        <div class="cap">Green wheat fields</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/agro/farmers-harvest.jpg" alt="Farmers harvesting wheat near Risalpur, Nowshera">
-        <div class="cap">Wheat harvest</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/agro/sugarcane.jpg" alt="Farmer working in a sugarcane field">
-        <div class="cap">Sugarcane production</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/agro/livestock.jpg" alt="Cattle grazing in a Punjab field">
-        <div class="cap">Livestock &amp; grazing land</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/agro/livestock-milking.jpg" alt="Farm worker milking livestock at ORIX Agro">
-        <div class="cap">Livestock &amp; daily farm work</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/agro/hero-farmland.jpg" alt="Aerial view of ORIX Agro farmland in Risalpur, Nowshera">
-        <div class="cap">Farmland from above</div>
-      </div>
-    </div>
+    <div class="gallery-grid gallery-set" data-set="agro" data-gallery-set="agro"></div>
 
-    <div class="gallery-grid gallery-set" data-set="resorts">
-      <div class="gallery-item reveal in">
-        <img src="assets/resorts/hero-mountain.jpg" alt="Mountain forest view at Cedar Lodges & Residences, Changla Gali">
-        <div class="cap">Changla Gali, Abbottabad</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/resorts/suite-bedroom.jpg" alt="A premium suite bedroom at Cedar Lodges & Residences">
-        <div class="cap">Premium suite bedroom</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/resorts/balcony-view.jpg" alt="A suite balcony overlooking the mountains at Cedar Lodges & Residences">
-        <div class="cap">Mountain-view balcony</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/resorts/fireside-evening.jpg" alt="An evening fireside lounge at Cedar Lodges & Residences">
-        <div class="cap">Fireside evenings</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/resorts/vaulted-suite.jpg" alt="A vaulted-ceiling suite with its own fireplace at Cedar Lodges & Residences">
-        <div class="cap">Vaulted suite &amp; fireplace</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/resorts/wood-panel-suite.jpg" alt="A wood-paneled suite with balcony at Cedar Lodges & Residences">
-        <div class="cap">Wood-paneled suite</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/resorts/balcony-suite-2.jpg" alt="A suite with private balcony at Cedar Lodges & Residences">
-        <div class="cap">Suite with private balcony</div>
-      </div>
-      <div class="gallery-item reveal in">
-        <img src="assets/resorts/terrace-sunset.jpg" alt="A covered terrace at sunset at Cedar Lodges & Residences">
-        <div class="cap">Terrace at sunset</div>
-      </div>
-    </div>
+    <div class="gallery-grid gallery-set" data-set="resorts" data-gallery-set="resorts"></div>
 
   </div>
 </section>
@@ -257,6 +178,7 @@
   <div class="lightbox-cap"></div>
 </div>
 
+<script src="js/gallery-data.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

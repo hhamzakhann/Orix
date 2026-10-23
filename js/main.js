@@ -3,6 +3,50 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- galleries (from js/gallery-data.js) ----------
+     Built first so the reveal and lightbox code below picks the
+     generated items up like hand-written ones. */
+  var galleryData = window.ORIX_GALLERY || {};
+
+  function galleryItem(photo, cls, group){
+    var item = document.createElement('div');
+    item.className = cls;
+    if(group) item.setAttribute('data-group', group);
+    var img = document.createElement('img');
+    img.src = photo.src;
+    img.alt = photo.alt;
+    img.loading = 'lazy';
+    var cap = document.createElement('div');
+    cap.className = 'cap';
+    cap.textContent = photo.cap;
+    item.appendChild(img);
+    item.appendChild(cap);
+    return item;
+  }
+
+  // gallery.html: every photo of each sector
+  document.querySelectorAll('[data-gallery-set]').forEach(function(grid){
+    var photos = galleryData[grid.getAttribute('data-gallery-set')];
+    if(!photos) return;
+    grid.innerHTML = '';
+    photos.forEach(function(p){ grid.appendChild(galleryItem(p, 'gallery-item reveal in')); });
+  });
+
+  // sector pages: the first few photos, the rest live in the gallery
+  document.querySelectorAll('[data-gallery-preview]').forEach(function(grid){
+    var photos = galleryData[grid.getAttribute('data-gallery-preview')];
+    if(!photos) return;
+    var limit = parseInt(grid.getAttribute('data-limit'), 10) || 6;
+    grid.innerHTML = '';
+    photos.slice(0, limit).forEach(function(p){ grid.appendChild(galleryItem(p, 'gallery-item reveal', 'gal')); });
+  });
+
+  // "24 photos" labels on gallery cards and "view all" links
+  document.querySelectorAll('[data-gallery-count]').forEach(function(el){
+    var photos = galleryData[el.getAttribute('data-gallery-count')];
+    if(photos) el.textContent = photos.length + (photos.length === 1 ? ' photo' : ' photos');
+  });
+
   /* ---------- preloader ---------- */
   window.addEventListener('load', function(){
     var pre = document.querySelector('.preloader');
@@ -228,7 +272,14 @@
         });
         var display = document.getElementById('gallery-display');
         if(display) display.scrollIntoView({ behavior:'smooth', block:'start' });
+        if(history.replaceState) history.replaceState(null, '', '#' + target);
       });
+    });
+
+    // gallery.html#agro opens straight on that sector (the sector pages link here)
+    var wanted = location.hash.replace('#', '');
+    pickBtns.forEach(function(btn){
+      if(wanted && btn.getAttribute('data-target') === wanted) btn.click();
     });
   }
 
